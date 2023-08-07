@@ -1,0 +1,20 @@
+Source: fdlibm-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 10), make
+#Build-Depends: debhelper (>= 10), make,
+# gcc-m68k-atari-mint, libc-m68k-atari-mint
+Homepage: https://github.com/freemint/fdlibm
+
+Package: fdlibm-m68k-atari-mintelf
+Provides: libm-m68k-atari-mintelf
+Section: devel
+Architecture: all
+Priority: optional
+Depends: libc-m68k-atari-mint
+Conflicts: mintlib-m68k-atari-mint (< 0.60.1.Git-20200504)
+Description: FDLIBM, a free math library for Atari MiNT.
+ This package is primarily for Atari MiNT developers and is
+ not needed by normal users or developers.
