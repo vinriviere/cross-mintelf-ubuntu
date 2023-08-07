@@ -1,0 +1,130 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_BUILD_GNU_TYPE      := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_TYPE       := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+tarball := $(wildcard binutils-*.tar.*)
+patch   := $(wildcard binutils-*.patch.bz2)
+
+srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\..*//')
+
+# FIXME: one-char vars are evil, even more than emacs.
+D := $(CURDIR)/debian/binutils-m68k-atari-mintelf
+
+unpack: unpack-stamp
+unpack-stamp:
+	dh_testdir
+
+	tar xf $(tarball)
+	mkdir build
+
+	touch unpack-stamp
+
+patch: patch-stamp
+patch-stamp: unpack-stamp
+	dh_testdir
+
+	cd $(srcdir) && \
+		bzcat ../$(patch) | patch -p1
+
+	touch patch-stamp
+
+configure: configure-stamp
+configure-stamp: patch-stamp
+	dh_testdir
+
+	cd build && \
+	../$(srcdir)/configure --prefix=/usr \
+			--build=$(DEB_BUILD_GNU_TYPE) \
+			--host=$(DEB_HOST_GNU_TYPE) \
+			--target=m68k-atari-mintelf \
+			--disable-nls \
+			--disable-libctf
+
+	touch configure-stamp
+
+build: configure-stamp build-stamp
+build-stamp:
+	dh_testdir
+	cd build && \
+		$(MAKE)
+	touch build-stamp
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	# Add here commands to install the package into $(D)
+	cd build && \
+		$(MAKE) install DESTDIR=$(D)
+
+	# Change hardlinks to symlinks
+	ln -sf m68k-atari-mintelf-ld.bfd $(D)/usr/bin/m68k-atari-mintelf-ld
+	for i in ar as ld ld.bfd nm objcopy objdump ranlib readelf strip ; do \
+		ln -sf ../../bin/m68k-atari-mintelf-$$i $(D)/usr/m68k-atari-mintelf/bin/$$i ; \
+	done
+
+	# Files also in main binutils pkg
+	rm -r $(D)/usr/share/info
+
+	# Remove files related to non-built tools
+	rm $(D)/usr/share/man/man1/m68k-atari-mintelf-dlltool.1
+	rm $(D)/usr/share/man/man1/m68k-atari-mintelf-windmc.1
+	rm $(D)/usr/share/man/man1/m68k-atari-mintelf-windres.1
+
+	# Remove irrelevant linker scripts
+	for ext in xbn xe xn xr xu ; do \
+		rm $(D)/usr/m68k-atari-mintelf/lib/ldscripts/m68kmint.$$ext ; \
+	done
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf build $(srcdir)
+	rm -f build-stamp configure-stamp patch-stamp unpack-stamp
+
+	dh_clean
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+#	dh_installexamples
+#	dh_installmenu
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+	dh_installman
+#	dh_installinfo
+	dh_installchangelogs
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_makeshlibs
+	dh_installdeb
+#	dh_perl
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
