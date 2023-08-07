@@ -1,0 +1,23 @@
+name: Deploy to PPA
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      # Install our GnuPG key pair
+      - env:
+          GPG_KEYS: ${{ secrets.GPG_KEYS }}
+        run: .github/install_gpg_keys.sh
+      # Install our SSH key pair
+      - env:
+          SSH_ID: ${{ secrets.SSH_ID }}
+        run: .github/install_ssh_id.sh
+      # Install additional packages
+      - run: sudo apt-get install -y devscripts debhelper dput python3-paramiko
+      # Main script
+      - env:
+          COMMIT_BEFORE: ${{ github.event.before }}
+          COMMIT_AFTER: ${{ github.event.after }}
+        run: .github/main.sh
