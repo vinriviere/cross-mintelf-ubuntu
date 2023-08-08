@@ -14,6 +14,7 @@ tarball := $(wildcard gcc-*.tar.*)
 patch   := $(wildcard gcc-*.patch.bz2)
 
 srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\..*//')
+version := $(shell echo $(srcdir) | sed -e 's/.*-//')
 
 # FIXME: one-char vars are evil, even more than emacs.
 D := $(CURDIR)/debian/gcc-m68k-atari-mintelf
@@ -80,8 +81,14 @@ install: build
 	cd build && \
 		$(MAKE) install DESTDIR=$(D)
 
+	# Replace hardlinks with symlinks
+	ln -sf m68k-atari-mintelf-g++ $(D)usr/bin/m68k-atari-mintelf-c++
+	ln -sf m68k-atari-mintelf-gcc-$(version) $(D)usr/bin/m68k-atari-mintelf-gcc
+
 	# Clean up the binary tree
-	rm -r $(D)/usr/share/info
+	rmidir $(D)/usr/include
+	rm -r  $(D)/usr/share/info
+	rm -r  $(D)/usr/share/man/man7
 
 	# Strip libraries
 	find  $(D)/usr/m68k-atari-mintelf/lib -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
