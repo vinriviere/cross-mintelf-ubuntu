@@ -86,9 +86,9 @@ install: build
 	ln -sf m68k-atari-mintelf-gcc-$(version) $(D)/usr/bin/m68k-atari-mintelf-gcc
 
 	# Clean up the binary tree
-	rmidir $(D)/usr/include
-	rm -r  $(D)/usr/share/info
-	rm -r  $(D)/usr/share/man/man7
+	rmdir $(D)/usr/include
+	rm -r $(D)/usr/share/info
+	rm -r $(D)/usr/share/man/man7
 
 	# Strip libraries
 	find  $(D)/usr/m68k-atari-mintelf/lib -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
