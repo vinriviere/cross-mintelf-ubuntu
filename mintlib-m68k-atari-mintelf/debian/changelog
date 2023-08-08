@@ -1,8 +1,9 @@
-mintlib-m68k-atari-mintelf (0.60.1.Git-20220821-2) unstable; urgency=medium
+mintlib-m68k-atari-mintelf (0.60.1-Git-20230624-1) unstable; urgency=medium
 
-  * tmp
+  * Switch to mintelf.
+  * Upgrade to current Git version.
 
- -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 07 Aug 2023 13:26:31 +0200
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 08 Aug 2023 18:20:33 +0200
 
 mintlib-m68k-atari-mint (0.60.1.Git-20220821-1) unstable; urgency=medium
 

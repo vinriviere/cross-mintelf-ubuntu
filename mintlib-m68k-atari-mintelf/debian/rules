@@ -38,16 +38,16 @@ configure-stamp: patch-stamp
 
 	touch configure-stamp
 
-build: configure-stamp #build-stamp
+build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
 
-#	cd build && \
-#		$(MAKE) $(MAKE_OVERRIDES)
+	cd build && \
+		$(MAKE) $(MAKE_OVERRIDES)
 
 	touch build-stamp
 
-install: #build
+install: build
 	dh_testdir
 	dh_testroot
 	dh_prep
@@ -55,17 +55,12 @@ install: #build
 
 	# Add here commands to install the package into $(D)
 	mkdir -p $(BINARY_BASE)
-#	cd build && \
-#		$(MAKE) install $(MAKE_OVERRIDES)
-
 	cd build && \
-		tar xf ../*-bin-cygwin*.tar.bz2 \
-		&& mv opt/cross-mintelf/m68k-atari-mintelf $(D)/usr \
-		&& rm -r opt
+		$(MAKE) install $(MAKE_OVERRIDES)
 
 	# Clean up the binary tree
 	#rm -r $(BINARY_BASE)/share
-	#find  $(BINARY_BASE)/lib '(' -name '*.a' -o -name '*.o' ')' -print -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' '{}' ';'
+	find  $(BINARY_BASE)/lib '(' -name '*.a' -o -name '*.o' ')' -print -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' '{}' ';'
 
 clean:
 	dh_testdir
