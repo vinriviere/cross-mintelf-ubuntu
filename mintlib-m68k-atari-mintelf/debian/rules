@@ -59,8 +59,11 @@ install: build
 		$(MAKE) install $(MAKE_OVERRIDES)
 
 	# Clean up the binary tree
-	#rm -r $(BINARY_BASE)/share
-	find  $(BINARY_BASE)/lib '(' -name '*.a' -o -name '*.o' ')' -print -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' '{}' ';'
+	rm -r $(BINARY_BASE)/share
+	rm -r $(BINARY_BASE)/sbin
+
+	# Strip the libraries
+	find  $(BINARY_BASE)/lib '(' -name '*.a' -o -name '*.o' ')' -print -exec m68k-atari-mintelf-strip -S -X -w -N '.L[0-9]*' '{}' ';'
 
 clean:
 	dh_testdir
