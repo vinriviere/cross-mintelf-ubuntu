@@ -79,7 +79,7 @@ install: build
 	cd build && \
 		$(MAKE) install DESTDIR=$(D)
 
-	# Clean up
+	# Clean up the binary tree
 	rm -r $(D)/usr/include
 	rm -r $(D)/usr/share/info
 	rm -r $(D)/usr/share/man/man7

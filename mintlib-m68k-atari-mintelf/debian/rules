@@ -63,7 +63,7 @@ install: #build
 		&& mv opt/cross-mintelf/m68k-atari-mintelf $(D)/usr \
 		&& rm -r opt
 
-	# Cleanup
+	# Clean up the binary tree
 	#rm -r $(BINARY_BASE)/share
 	#find  $(BINARY_BASE)/lib '(' -name '*.a' -o -name '*.o' ')' -print -exec m68k-atari-mint-strip -S -X -w -N '.L[0-9]*' '{}' ';'
 

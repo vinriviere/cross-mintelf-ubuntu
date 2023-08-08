@@ -58,7 +58,7 @@ install: build
 	mkdir -p $(D)/usr
 	mv build/opt/cross-mintelf/m68k-atari-mintelf $(D)/usr
 
-	# Cleanup the binary tree
+	# Clean up the binary tree
 	#rm -r $(D)/usr/share/info
 
 clean:
