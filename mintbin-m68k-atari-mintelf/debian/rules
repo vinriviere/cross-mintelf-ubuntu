@@ -42,14 +42,16 @@ configure-stamp: unpack-stamp
 build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
+
 	cd build && \
 		$(MAKE)
+
 	touch build-stamp
 
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into debian/mintbin-m68k-atari-mintelf
