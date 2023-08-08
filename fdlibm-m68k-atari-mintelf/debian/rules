@@ -50,7 +50,7 @@ install: build
 	dh_prep
 	dh_installdirs
 
-	# Add here commands to install the package into debian/mintbin-m68k-atari-mintelf
+	# Add here commands to install the package into $(D)
 #	cd build && \
 #		$(MAKE) install DESTDIR=$(D)
 
