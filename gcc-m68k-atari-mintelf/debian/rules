@@ -48,6 +48,7 @@ configure-stamp: patch-stamp
 			--disable-nls \
 			--enable-languages="c,c++" \
 			--disable-libstdcxx-pch \
+			--disable-libcc1 \
 			CFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer" \
 			CXXFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer"
 
@@ -80,9 +81,7 @@ install: build
 		$(MAKE) install DESTDIR=$(D)
 
 	# Clean up the binary tree
-	rm -r $(D)/usr/include
 	rm -r $(D)/usr/share/info
-	rm -r $(D)/usr/share/man/man7
 
 	# Strip libraries
 	find  $(D)/usr/m68k-atari-mintelf/lib -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
