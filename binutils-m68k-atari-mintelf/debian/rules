@@ -53,8 +53,10 @@ configure-stamp: patch-stamp
 build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
+
 	cd build && \
 		$(MAKE)
+
 	touch build-stamp
 
 install: build
