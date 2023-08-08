@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper,
+Build-Depends: debhelper (>= 10),
  gcc, bison, flex, libfl-dev,
  gcc-m68k-atari-mintelf
 Homepage: https://github.com/freemint/mintlib

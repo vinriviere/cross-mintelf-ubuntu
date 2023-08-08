@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper
+Build-Depends: debhelper (>= 10), g++, texinfo
 Homepage: https://github.com/freemint/m68k-atari-mint-binutils-gdb
 
 Package: binutils-m68k-atari-mintelf
@@ -11,6 +11,7 @@ Section: devel
 Architecture: any
 Priority: optional
 Depends: ${shlibs:Depends}
+Recommends: mintbin-m68k-atari-mintelf
 Description: binary utilities that support Atari MiNT PRG/ELF executables.
  The programs in this package are used to assemble, link and manipulate binary
  and object files for the Atari MiNT operating system. This package is

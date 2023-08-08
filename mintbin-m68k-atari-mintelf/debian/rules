@@ -56,6 +56,11 @@ install: build
 	cd build && \
 		$(MAKE) install DESTDIR=$(D)
 
+	# Replace hardlinks with symlinks
+	for i in arconv cnm csize cstrip flags mintbin stack symex ; do \
+		ln -sf ../../bin/m68k-atari-mintelf-$$i $(D)/usr/m68k-atari-mintelf/bin/$$i ; \
+	done
+
 	# Cleanup the binary tree
 	rm -r $(D)/usr/share/info
 

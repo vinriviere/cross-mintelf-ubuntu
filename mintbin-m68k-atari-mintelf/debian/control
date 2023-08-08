@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper
+Build-Depends: debhelper (>= 10), gcc, texinfo
 Homepage: https://github.com/freemint/mintbin
 
 Package: mintbin-m68k-atari-mintelf
@@ -11,6 +11,7 @@ Section: devel
 Architecture: any
 Priority: optional
 Depends: ${shlibs:Depends}
+Recommends: binutils-m68k-atari-mintelf, gcc-m68k-atari-mintelf
 Description: Additional binary utilities that support Atari MiNT executables.
  The programs in this package are used to manipulate executable files for the
  Atari MiNT operating system. This package is primarily for Atari MiNT

@@ -1,4 +1,4 @@
-gcc-m68k-atari-mintelf (13.2.0-mintelf-20230728-1) unstable; urgency=low
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20230728-1) unstable; urgency=medium
 
   * Switch to mintelf.
   * Upgrade do version 13.2.O.

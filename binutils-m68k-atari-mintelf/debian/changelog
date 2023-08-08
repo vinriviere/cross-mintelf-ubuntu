@@ -1,4 +1,4 @@
-binutils-m68k-atari-mintelf (2.41-mintelf-20230806-1) unstable; urgency=low
+binutils-m68k-atari-mintelf (2.41-mintelf-20230806-1) unstable; urgency=medium
 
   * Upgrade to version 2.41.
   * Switch to mintelf target.

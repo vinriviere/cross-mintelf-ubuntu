@@ -3,11 +3,11 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper,
+Build-Depends: debhelper (>= 10), g++, texinfo,
  libmpc-dev, libmpfr-dev,
  binutils-m68k-atari-mintelf,
- libc-m68k-atari-mintelf | mintlib-m68k-atari-mintelf,
- libm-m68k-atari-mintelf | fdlibm-m68k-atari-mintelf
+ mintlib-m68k-atari-mintelf | libc-m68k-atari-mintelf,
+ fdlibm-m68k-atari-mintelf | libm-m68k-atari-mintelf
 Homepage: https://github.com/freemint/m68k-atari-mint-gcc
 
 Package: gcc-m68k-atari-mintelf
@@ -16,8 +16,8 @@ Architecture: any
 Priority: optional
 Depends: ${shlibs:Depends},
  binutils-m68k-atari-mintelf,
- libc-m68k-atari-mintelf | mintlib-m68k-atari-mintelf,
- libm-m68k-atari-mintelf | fdlibm-m68k-atari-mintelf
+ mintlib-m68k-atari-mintelf | libc-m68k-atari-mintelf,
+ fdlibm-m68k-atari-mintelf | libm-m68k-atari-mintelf
 Recommends: mintbin-m68k-atari-mintelf
 Description: GCC cross-compiler for building Atari MiNT PRG/ELF executables.
  This is the GNU Compiler Collection configured to cross-build Atari MiNT

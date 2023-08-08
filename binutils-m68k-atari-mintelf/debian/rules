@@ -67,7 +67,7 @@ install: build
 	cd build && \
 		$(MAKE) install DESTDIR=$(D)
 
-	# Change hardlinks to symlinks
+	# Replace hardlinks with symlinks
 	ln -sf m68k-atari-mintelf-ld.bfd $(D)/usr/bin/m68k-atari-mintelf-ld
 	for i in ar as ld ld.bfd nm objcopy objdump ranlib readelf strip ; do \
 		ln -sf ../../bin/m68k-atari-mintelf-$$i $(D)/usr/m68k-atari-mintelf/bin/$$i ; \
