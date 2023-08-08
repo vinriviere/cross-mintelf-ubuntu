@@ -82,8 +82,8 @@ install: build
 		$(MAKE) install DESTDIR=$(D)
 
 	# Replace hardlinks with symlinks
-	ln -sf m68k-atari-mintelf-g++ $(D)usr/bin/m68k-atari-mintelf-c++
-	ln -sf m68k-atari-mintelf-gcc-$(version) $(D)usr/bin/m68k-atari-mintelf-gcc
+	ln -sf m68k-atari-mintelf-g++ $(D)/usr/bin/m68k-atari-mintelf-c++
+	ln -sf m68k-atari-mintelf-gcc-$(version) $(D)/usr/bin/m68k-atari-mintelf-gcc
 
 	# Clean up the binary tree
 	rmidir $(D)/usr/include
