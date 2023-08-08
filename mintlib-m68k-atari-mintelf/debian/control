@@ -3,9 +3,10 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper (>= 10), make, bash
-#Build-Depends: debhelper (>= 10), make, bash, gcc-m68k-atari-mint,
-# gcc, bison, flex, libfl-dev
+Build-Depends: debhelper,
+ gcc, bison, flex, libfl-dev,
+ gcc-m68k-atari-mintelf
+Homepage: https://github.com/freemint/mintlib
 
 Package: mintlib-m68k-atari-mintelf
 Provides: libc-m68k-atari-mintelf

@@ -42,8 +42,6 @@ configure-stamp: patch-stamp
 
 	cd build && \
 	../$(srcdir)/configure --prefix=/usr \
-			--infodir=/usr/share/info \
-			--mandir=/usr/share/man \
 			--build=$(DEB_BUILD_GNU_TYPE) \
 			--host=$(DEB_HOST_GNU_TYPE) \
 			--target=m68k-atari-mintelf \
@@ -62,9 +60,10 @@ build-stamp:
 		$(MAKE) all-gcc
 
 	# Dirty hack to fix the PATH_MAX issue.
-	# The good solution would be to configure gcc using --with-headers
+	# The right solution would be to configure gcc using --with-sysroot
 	cd build && \
 		cat ../$(srcdir)/gcc/limitx.h ../$(srcdir)/gcc/glimits.h ../$(srcdir)/gcc/limity.h >gcc/include/limits.h
+
 	cd build && \
 		$(MAKE)
 
@@ -80,11 +79,12 @@ install: build
 	cd build && \
 		$(MAKE) install DESTDIR=$(D)
 
-	# Files also in main gcc pkg
+	# Clean up
 	rm -r $(D)/usr/include
-	rm    $(D)/usr/lib/*.a
 	rm -r $(D)/usr/share/info
 	rm -r $(D)/usr/share/man/man7
+
+	# Strip libraries
 	find  $(D)/usr/m68k-atari-mintelf/lib -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
 	find  $(D)/usr/lib/gcc/m68k-atari-mintelf/* -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
 

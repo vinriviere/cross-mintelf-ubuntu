@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: dpkg-dev, debhelper,
+Build-Depends: debhelper,
  libmpc-dev, libmpfr-dev,
  binutils-m68k-atari-mintelf,
  libc-m68k-atari-mintelf | mintlib-m68k-atari-mintelf,
