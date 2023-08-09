@@ -1,0 +1,5 @@
+zzzfake (0-1) unstable; urgency=medium
+
+  * Fake mintlib and fdlibm
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 09 Aug 2023 20:01:17 +0200
