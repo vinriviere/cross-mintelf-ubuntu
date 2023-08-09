@@ -1,0 +1,17 @@
+Source: cross-mintelf-essential
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 10)
+
+Package: cross-mintelf-essential
+Section: devel
+Architecture: all
+Priority: optional
+Depends: gcc-m68k-atari-mintelf,
+ mintbin-m68k-atari-mintelf,
+ gemlib-m68k-atari-mintelf
+Description: Atari MiNT ELF cross-compiler tools.
+ This package depends on all the essential tools
+ to cross-build Atari MiNT software.
