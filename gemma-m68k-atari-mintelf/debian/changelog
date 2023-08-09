@@ -1,0 +1,29 @@
+gemma-m68k-atari-mintelf (1.11-Git-20210702-1) unstable; urgency=medium
+
+  * Switch to mintelf.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 09 Aug 2023 20:46:06 +0200
+
+gemma-m68k-atari-mint (0-Git-20210702-1) unstable; urgency=medium
+
+  * Upgrade to the latest Git version.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 15 Jan 2023 13:40:05 +0100
+
+gemma-m68k-atari-mint (0-Git-20180716-5) unstable; urgency=medium
+
+  * Upgrade to debhelper 10.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 23 Apr 2022 15:25:12 +0200
+
+gemma-m68k-atari-mint (0-Git-20180716-4) unstable; urgency=medium
+
+  * Set Architecture to "all" for cross-libraries.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Fri, 01 May 2020 11:21:08 +0200
+
+gemma-m68k-atari-mint (0-Git-20180716-3) unstable; urgency=low
+
+  * Initial version.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 16 Jul 2018 23:16:37 +0200
