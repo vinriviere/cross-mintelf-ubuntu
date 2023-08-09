@@ -39,6 +39,7 @@ patch-stamp: unpack-stamp
 configure: configure-stamp
 configure-stamp: patch-stamp
 	dh_testdir
+
 	touch configure-stamp
 
 build: configure-stamp build-stamp
