@@ -10,7 +10,7 @@
 DEB_BUILD_GNU_TYPE      := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 DEB_HOST_GNU_TYPE       := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
-tarball := $(wildcard fdlibm-*.tar.gz)
+tarball := $(wildcard fdlibm-*.tar.*)
 
 srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\..*//')
 
@@ -33,15 +33,18 @@ configure-stamp: unpack-stamp
 	cd build && \
 	../$(srcdir)/configure --prefix=/usr \
 			--build=$(DEB_BUILD_GNU_TYPE) \
-			--host=m68k-atari-mintelf
+			--host=m68k-atari-mintelf \
+			--prefix=/usr/m68k-atari-mintelf
 
 	touch configure-stamp
 
-build: #configure-stamp build-stamp
+build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
+
 	cd build && \
 		$(MAKE)
+
 	touch build-stamp
 
 install: build
@@ -51,15 +54,11 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into $(D)
-#	cd build && \
-#		$(MAKE) install DESTDIR=$(D)
+	cd build && \
+		$(MAKE) install DESTDIR=$(D)
 
-	mkdir build && cd build && tar xf ../fdlibm*bin-cygwin-*.tar.bz2
-	mkdir -p $(D)/usr
-	mv build/opt/cross-mintelf/m68k-atari-mintelf $(D)/usr
-
-	# Clean up the binary tree
-	#rm -r $(D)/usr/share/info
+	# Strip the libraries
+	find  $(D)/usr/m68k-atari-mintelf/lib -name '*.a' -print -exec m68k-atari-mintelf-strip -S -x '{}' ';'
 
 clean:
 	dh_testdir
@@ -90,7 +89,7 @@ binary-arch: build install
 #	dh_installinfo
 	dh_installchangelogs
 	dh_link
-#	dh_strip -X debian/mintlib-m68k-atari-mintelf/usr/m68k-atari-mintelf
+#	dh_strip
 	dh_compress
 	dh_fixperms
 #	dh_makeshlibs
