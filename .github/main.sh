@@ -29,9 +29,9 @@ echorun . .github/init_ppa.sh ppa:vriviere/mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh mintlib-m68k-atari-mintelf
 
-echorun .github/deploy_ppa_all_dists.sh fdlibm-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh fdlibm-m68k-atari-mintelf
 
-#echorun .github/deploy_ppa_all_dists.sh gemlib-m68k-atari-mintelf
+echorun .github/deploy_ppa_all_dists.sh gemlib-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh ncurses-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh zlib-m68k-atari-mintelf
 
