@@ -1,0 +1,17 @@
+Source: gemlib-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 10),
+ gcc-m68k-atari-mintelf
+Homepage: https://github.com/freemint/gemlib
+
+Package: gemlib-m68k-atari-mintelf
+Section: devel
+Architecture: all
+Priority: optional
+Depends: libc-m68k-atari-mintelf
+Description: GEMlib, the GEM library for Atari MiNT.
+ This package is primarily for Atari MiNT developers and is
+ not needed by normal users or developers.
