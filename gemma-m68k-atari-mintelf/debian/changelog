@@ -2,7 +2,7 @@ gemma-m68k-atari-mintelf (1.11-Git-20210702-1) unstable; urgency=medium
 
   * Switch to mintelf.
 
- -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 09 Aug 2023 20:46:06 +0200
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 10 Aug 2023 00:24:18 +0200
 
 gemma-m68k-atari-mint (0-Git-20210702-1) unstable; urgency=medium
 

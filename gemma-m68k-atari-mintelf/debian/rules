@@ -16,7 +16,7 @@ target := m68k-atari-mintelf
 srcdir  := $(shell echo $(tarball) | sed -e 's/\(-src\)\?\.tar\..*//')
 
 # FIXME: one-char vars are evil, even more than emacs.
-D := $(CURDIR)/debian/gemma-m68k-atari-mint
+D := $(CURDIR)/debian/gemma-$(target)
 
 unpack: unpack-stamp
 unpack-stamp:
@@ -60,12 +60,13 @@ install: build
 	dh_prep
 	dh_installdirs
 
-	# Add here commands to install the package into debian/gemma-m68k-atari-mint
+	# Add here commands to install the package into $(D)
 	mkdir -p $(D)/usr/$(target)
 	cd build && \
 		$(MAKE) install CROSS_TOOL=$(target) PREFIX=$(D)/usr/$(target) V=1
 
 	# Clean up
+	rm -r $(D)/usr/mint
 	find  $(D)/usr/$(target)/lib -name '*.a' -print -exec $(target)-strip -S -x '{}' ';'
 
 clean:
