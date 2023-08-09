@@ -31,11 +31,11 @@ echorun . .github/init_ppa.sh ppa:vriviere/mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh fdlibm-m68k-atari-mintelf
 
-echorun .github/deploy_ppa_all_dists.sh gemlib-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh gemlib-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh ncurses-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh zlib-m68k-atari-mintelf
 
-#echorun .github/deploy_ppa_all_dists.sh cross-mintelf-essential
+echorun .github/deploy_ppa_all_dists.sh cross-mintelf-essential
 #echorun .github/deploy_ppa_all_dists.sh cflib-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh gemma-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh ldg-m68k-atari-mintelf
