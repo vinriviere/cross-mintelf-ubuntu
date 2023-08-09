@@ -35,6 +35,7 @@ patch-stamp: unpack-stamp
 #		bzcat ../$(patch) | patch -p1
 
 	sed -i 's/const long sema_users/extern &/' build/src/gemma.h
+	sed -i 's/CFLAGS +=.*/& -fno-builtin/' build/configtool/Makefile.objs
 
 	touch patch-stamp
 
