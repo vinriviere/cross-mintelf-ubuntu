@@ -1,9 +1,9 @@
-binutils-m68k-atari-mintelf (2.41-mintelf-20230809-1) unstable; urgency=medium
+binutils-m68k-atari-mintelf (2.41-mintelf-20230810-1) unstable; urgency=medium
 
   * Switch to mintelf target.
   * Upgrade to version 2.41.
 
- -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 09 Aug 2023 23:53:29 +0200
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 10 Aug 2023 21:21:27 +0200
 
 binutils-m68k-atari-mint (2.30-mint-20180703-2) unstable; urgency=medium
 
