@@ -85,7 +85,7 @@ install: build
 
 	# Remove irrelevant linker scripts
 	for ext in xbn xe xn xr xu ; do \
-		rm $(D)/usr/m68k-atari-mintelf/lib/ldscripts/m68kmint.$$ext ; \
+		rm $(D)/usr/m68k-atari-mintelf/lib/ldscripts/m68kmintelf.$$ext ; \
 	done
 
 clean:
