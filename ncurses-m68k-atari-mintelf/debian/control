@@ -1,0 +1,16 @@
+Source: ncurses-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 3.7.3
+Build-Depends: debhelper (>= 10),
+ gcc,
+ gcc-m68k-atari-mintelf
+Homepage: https://invisible-island.net/ncurses/
+
+Package: ncurses-m68k-atari-mintelf
+Section: devel
+Architecture: all
+Priority: optional
+Description: ncurses for Atari MiNT.
+ A library for making fullscreen textmode programs.
