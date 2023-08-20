@@ -1,3 +1,10 @@
+mintlib-m68k-atari-mintelf (0.60.1-Git-20230818-1) unstable; urgency=medium
+
+  * Upgrade to current Git version.
+  * Fix sigprocmask will NULL set argument. Needed by gdb.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 20 Aug 2023 19:16:35 +0200
+
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230624-1) unstable; urgency=medium
 
   * Switch to mintelf.
