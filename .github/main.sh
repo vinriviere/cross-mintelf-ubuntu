@@ -19,7 +19,7 @@ echorun . .github/guess_debemail.sh
 # Deploy updated packages to Ubuntu Launchpad PPA
 echorun . .github/init_ppa.sh ppa:vriviere/mintelf
 
-#echorun .github/deploy_changed_packages.sh -m68k-atari-mintelf
+echorun .github/deploy_changed_packages.sh -m68k-atari-mintelf
 
 # The lines below are sorted according to dependencies
 #echorun .github/deploy_ppa_all_dists.sh binutils-m68k-atari-mintelf
@@ -27,7 +27,7 @@ echorun . .github/init_ppa.sh ppa:vriviere/mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh gcc-m68k-atari-mintelf
 
-echorun .github/deploy_ppa_all_dists.sh mintlib-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh mintlib-m68k-atari-mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh fdlibm-m68k-atari-mintelf
 
