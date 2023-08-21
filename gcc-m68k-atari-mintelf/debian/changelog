@@ -1,11 +1,11 @@
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230819-1) unstable; urgency=medium
 
-  * Add optional dependencies to isl and zstd.
+  * Add optional dependencies to isl, zlib, and zstd.
   * Reintroduce -m68020-60 multilib.
   * Provide __sync_* functions.
   * Add missing call to init_sync_libfuncs.
 
- -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 20 Aug 2023 23:03:08 +0200
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 21 Aug 2023 06:54:58 +0200
 
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230728-1) unstable; urgency=medium
 
