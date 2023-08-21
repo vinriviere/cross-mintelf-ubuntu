@@ -28,8 +28,6 @@ patch: patch-stamp
 patch-stamp: unpack-stamp
 	dh_testdir
 
-	sed -i 's/^int errno/extern int errno/' build/misc/syslog.c
-
 	touch patch-stamp
 
 configure: configure-stamp

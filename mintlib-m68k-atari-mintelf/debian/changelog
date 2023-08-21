@@ -1,9 +1,10 @@
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230818-1) unstable; urgency=medium
 
   * Upgrade to current Git version.
+  * syslog.c: do not define a copy of errno.
   * Fix sigprocmask will NULL set argument. Needed by gdb.
 
- -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 20 Aug 2023 19:16:35 +0200
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 21 Aug 2023 07:05:29 +0200
 
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230624-1) unstable; urgency=medium
 
