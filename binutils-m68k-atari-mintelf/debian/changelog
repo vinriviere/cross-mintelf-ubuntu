@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.41-mintelf-20230827-2) unstable; urgency=medium
+
+  * Link with shared zlib and zstd.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 27 Aug 2023 16:18:20 +0200
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230827-1) unstable; urgency=medium
 
   * Revert hack to allow merging 680x0 and ColdFire objects.

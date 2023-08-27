@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
 Standards-Version: 3.7.3
-Build-Depends: debhelper (>= 10), g++, texinfo
+Build-Depends: debhelper (>= 10), g++, texinfo, pkgconf, zlib1g-dev, libzstd-dev
 Homepage: https://github.com/freemint/m68k-atari-mint-binutils-gdb
 
 Package: binutils-m68k-atari-mintelf
