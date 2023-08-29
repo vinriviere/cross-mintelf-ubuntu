@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.41-mintelf-20230829-1) unstable; urgency=medium
+
+  * ld: Remove TPA relocations in ELF headers.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 30 Aug 2023 00:15:37 +0200
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230828-1) unstable; urgency=medium
 
   * Disable relocations on branches to global symbols.
