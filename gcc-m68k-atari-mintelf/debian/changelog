@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20230904-1) unstable; urgency=medium
+
+  * Avoid a segmentation fault when using -malign-int. By Thorsten Otto.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 04 Sep 2023 16:48:26 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230819-1) unstable; urgency=medium
 
   * Add optional dependencies to isl and zstd.
