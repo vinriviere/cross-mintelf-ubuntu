@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.41-mintelf-20230905-1) unstable; urgency=medium
+
+  * Use GCC's crtbegin.o / crtend.o.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 06 Sep 2023 00:27:50 +0200
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230904-1) unstable; urgency=medium
 
   * objcopy: Force plain ELF output for some options
