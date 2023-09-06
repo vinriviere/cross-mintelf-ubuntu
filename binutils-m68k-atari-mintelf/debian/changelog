@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.41-mintelf-20230907-1) unstable; urgency=medium
+
+  * Add support for .preinit_array / .init_array / .fini_array.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 07 Sep 2023 23:00:25 +0200
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230905-1) unstable; urgency=medium
 
   * Use GCC's crtbegin.o / crtend.o.
