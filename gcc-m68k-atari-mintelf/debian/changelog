@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20230907-1) unstable; urgency=medium
+
+  * Enable .preinit_array / .init_array / .fini_array support.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 07 Sep 2023 23:57:47 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230905-1) unstable; urgency=medium
 
   * Add crtbegin.o / crtend.o.
