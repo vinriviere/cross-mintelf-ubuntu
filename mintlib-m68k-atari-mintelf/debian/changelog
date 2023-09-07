@@ -1,3 +1,9 @@
+mintlib-m68k-atari-mintelf (0.60.1-Git-20230907-1) unstable; urgency=medium
+
+  * Add support for .preinit_array / .init_array / .fini_array sections.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 07 Sep 2023 23:33:58 +0200
+
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230826-1) unstable; urgency=medium
 
   * Upgrade to current Git version.
