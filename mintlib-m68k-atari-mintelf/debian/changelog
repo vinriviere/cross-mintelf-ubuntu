@@ -1,3 +1,9 @@
+mintlib-m68k-atari-mintelf (0.60.1-Git-20230907-2) unstable; urgency=medium
+
+  * Add constraint on binutils version.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Fri, 08 Sep 2023 03:39:57 +0200
+
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230907-1) unstable; urgency=medium
 
   * Add support for .preinit_array / .init_array / .fini_array sections.
