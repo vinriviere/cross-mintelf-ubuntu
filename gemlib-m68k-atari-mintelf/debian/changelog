@@ -1,3 +1,9 @@
+gemlib-m68k-atari-mintelf (0.44.0-Git-20230616-2) unstable; urgency=medium
+
+  * Drop the leading underscore for external symbols.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 10 Sep 2023 20:13:44 +0200
+
 gemlib-m68k-atari-mintelf (0.44.0-Git-20230616-1) unstable; urgency=medium
 
   * Switch to mintelf.
