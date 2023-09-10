@@ -1,3 +1,9 @@
+fdlibm-m68k-atari-mintelf (5.3-Git-20230207-2) unstable; urgency=medium
+
+  * Drop the leading underscore for external symbols.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 10 Sep 2023 14:37:01 +0200
+
 fdlibm-m68k-atari-mintelf (5.3-Git-20230207) unstable; urgency=medium
 
   * Initial version.
