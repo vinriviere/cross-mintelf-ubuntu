@@ -1,3 +1,10 @@
+ncurses-m68k-atari-mintelf (6.4-20230910-2) unstable; urgency=medium
+
+  * Drop the leading underscore for external symbols.
+  * Fix tw100 terminal height. By Thorsten Otto.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 10 Sep 2023 23:26:21 +0200
+
 ncurses-m68k-atari-mintelf (6.4-1) unstable; urgency=medium
 
   * Switch to mintelf.
