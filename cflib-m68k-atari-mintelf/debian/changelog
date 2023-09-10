@@ -1,3 +1,9 @@
+cflib-m68k-atari-mintelf (0.21.0-Git-20230202-2) unstable; urgency=medium
+
+  * Drop the leading underscore for external symbols.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 10 Sep 2023 20:29:16 +0200
+
 cflib-m68k-atari-mintelf (0.21.0-Git-20230202-1) unstable; urgency=medium
 
   * Switch to mintelf.
