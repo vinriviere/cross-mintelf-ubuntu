@@ -1,3 +1,9 @@
+gemma-m68k-atari-mintelf (1.11-Git-20230912-1) unstable; urgency=medium
+
+  * Upgrade to the latest Git version.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 12 Sep 2023 22:43:21 +0200
+
 gemma-m68k-atari-mintelf (1.11-Git-20210702-1) unstable; urgency=medium
 
   * Switch to mintelf.
