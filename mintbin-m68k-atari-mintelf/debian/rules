@@ -32,8 +32,8 @@ patch: patch-stamp
 patch-stamp: unpack-stamp
 	dh_testdir
 
-	cd $(srcdir) && \
-		bzcat ../$(patch) | patch -p1
+	test -z '$(patch)' || (cd $(srcdir) && \
+		bzcat ../$(patch) | patch -p1)
 
 	touch patch-stamp
 

@@ -1,3 +1,9 @@
+mintbin-m68k-atari-mintelf (0.3-Git-20230913-1) unstable; urgency=medium
+
+  * Upgrade to current Git version.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 13 Sep 2023 23:36:04 +0200
+
 mintbin-m68k-atari-mintelf (0.3-Git-20230207-mintelf-20230806-1) unstable; urgency=medium
 
   * Switch to mintelf.
