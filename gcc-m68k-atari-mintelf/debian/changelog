@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20230915-1) unstable; urgency=medium
+
+  * Prevent jump-tables from being aligned. By Thorsten Otto.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 16 Sep 2023 22:24:38 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230910-1) unstable; urgency=medium
 
   * Drop the leading underscore for external symbols.
