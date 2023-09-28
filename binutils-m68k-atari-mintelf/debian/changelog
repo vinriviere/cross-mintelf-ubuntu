@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.41-mintelf-20230926-1) unstable; urgency=medium
+
+  * Fix m68k_elf32_atariprg_relocate_section for .eh_frame. By Thorsten Otto.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 28 Sep 2023 23:21:33 +0200
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230914-1) unstable; urgency=medium
 
   * ld: do not add TPA relocation entries for zero addresses. By Thorsten
