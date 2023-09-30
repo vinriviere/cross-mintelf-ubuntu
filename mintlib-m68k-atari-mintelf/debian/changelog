@@ -1,3 +1,9 @@
+mintlib-m68k-atari-mintelf (0.60.1-Git-20230928-1) unstable; urgency=medium
+
+  * Add missing cplusplus wrappers.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 01 Oct 2023 00:13:47 +0200
+
 mintlib-m68k-atari-mintelf (0.60.1-Git-20230907-3) unstable; urgency=medium
 
   * Drop the leading underscore for external symbols.
