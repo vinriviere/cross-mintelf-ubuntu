@@ -50,6 +50,7 @@ configure-stamp: patch-stamp
 			--enable-languages="c,c++" \
 			--disable-libstdcxx-pch \
 			--disable-libcc1 \
+			--disable-sjlj-exceptions \
 			CFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer" \
 			CXXFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer"
 
