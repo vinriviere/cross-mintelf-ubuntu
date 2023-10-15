@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231003-1) unstable; urgency=medium
+
+  * Revert "Fix unaligned accesses in dwarf unwind code"
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 15 Oct 2023 17:57:47 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20230927-2) unstable; urgency=medium
 
   * Switch to DWARF-2 exceptions.
