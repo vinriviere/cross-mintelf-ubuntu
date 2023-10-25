@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231025-1) unstable; urgency=medium
+
+  * Runtime fix for DW_EH_PE_aligned encodings in .eh_frame sections
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 25 Oct 2023 14:29:43 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20231003-1) unstable; urgency=medium
 
   * Revert "Fix unaligned accesses in dwarf unwind code"
