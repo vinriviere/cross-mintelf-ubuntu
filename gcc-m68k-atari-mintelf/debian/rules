@@ -26,6 +26,11 @@ unpack-stamp:
 	tar xf $(tarball)
 	mkdir build
 
+	cd build && \
+	mkdir -p sys-root/usr && \
+		ln -s /usr/m68k-atari-mintelf/include sys-root/usr/include && \
+		ln -s /usr/m68k-atari-mintelf/lib sys-root/usr/lib
+
 	touch unpack-stamp
 
 patch: patch-stamp
@@ -46,6 +51,7 @@ configure-stamp: patch-stamp
 			--build=$(DEB_BUILD_GNU_TYPE) \
 			--host=$(DEB_HOST_GNU_TYPE) \
 			--target=m68k-atari-mintelf \
+			--with-sysroot=$$PWD/sys-root \
 			--disable-nls \
 			--enable-languages="c,c++" \
 			--disable-libstdcxx-pch \
@@ -59,13 +65,6 @@ configure-stamp: patch-stamp
 build: configure-stamp build-stamp
 build-stamp:
 	dh_testdir
-	cd build && \
-		$(MAKE) all-gcc
-
-	# Dirty hack to fix the PATH_MAX issue.
-	# The right solution would be to configure gcc using --with-sysroot
-	cd build && \
-		cat ../$(srcdir)/gcc/limitx.h ../$(srcdir)/gcc/glimits.h ../$(srcdir)/gcc/limity.h >gcc/include/limits.h
 
 	cd build && \
 		$(MAKE)

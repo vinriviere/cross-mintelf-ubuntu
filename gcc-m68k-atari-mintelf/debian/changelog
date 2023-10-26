@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231025-2) unstable; urgency=medium
+
+  * Configure with --with-sysroot.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Thu, 26 Oct 2023 09:46:30 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20231025-1) unstable; urgency=medium
 
   * Runtime fix for DW_EH_PE_aligned encodings in .eh_frame sections
