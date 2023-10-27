@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231027-1) unstable; urgency=medium
+
+  * Restore default static chain / struct value regnums.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Fri, 27 Oct 2023 23:30:55 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20231025-2) unstable; urgency=medium
 
   * Configure with --with-sysroot.
