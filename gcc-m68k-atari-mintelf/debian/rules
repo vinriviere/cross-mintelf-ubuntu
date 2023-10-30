@@ -57,6 +57,7 @@ configure-stamp: patch-stamp
 			--disable-libstdcxx-pch \
 			--disable-libcc1 \
 			--disable-sjlj-exceptions \
+			--disable-fixincludes \
 			CFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer" \
 			CXXFLAGS_FOR_TARGET="-O2 -fomit-frame-pointer"
 
@@ -87,6 +88,7 @@ install: build
 
 	# Clean up the binary tree
 	rmdir $(D)/usr/include
+	rmdir $(D)/usr/lib/gcc/m68k-atari-mintelf/*/include-fixed
 	rm -r $(D)/usr/share/info
 	rm -r $(D)/usr/share/man/man7
 
