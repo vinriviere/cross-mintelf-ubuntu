@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231104-1) unstable; urgency=medium
+
+  * Redefine ASM_RETURN_CASE_JUMP.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 04 Nov 2023 01:05:12 +0100
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20231027-2) unstable; urgency=medium
 
   * Disable fixincludes.
