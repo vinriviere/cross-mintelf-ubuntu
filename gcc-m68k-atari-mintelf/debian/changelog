@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.2.0-mintelf-20231106-1) unstable; urgency=medium
+
+  * Ensure that ADDR_VEC immediately follows jmp.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Mon, 06 Nov 2023 20:30:45 +0100
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20231104-1) unstable; urgency=medium
 
   * Redefine ASM_RETURN_CASE_JUMP.
