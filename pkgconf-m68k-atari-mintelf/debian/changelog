@@ -1,0 +1,5 @@
+pkgconf-m68k-atari-mintelf (1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 26 Dec 2023 00:15:56 +0100

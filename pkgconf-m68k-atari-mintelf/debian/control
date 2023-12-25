@@ -1,0 +1,19 @@
+Source: pkgconf-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+Build-Depends:
+ debhelper-compat (= 12),
+
+Package: pkgconf-m68k-atari-mintelf
+Provides: pkg-config-m68k-atari-mintelf
+Architecture: all
+Depends:
+ ${misc:Depends},
+ pkgconf,
+Description: pkgconf for m68k-atari-mintelf
+ pkgconf is an implementation of the pkg-config system,
+ which helps to configure compiler and linker flags for
+ development frameworks.

@@ -1,0 +1,3 @@
+#!/bin/sh
+export PKG_CONFIG_LIBDIR=/usr/m68k-atari-mintelf/lib/pkgconfig
+exec pkgconf "$@"
