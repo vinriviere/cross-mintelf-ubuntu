@@ -38,6 +38,7 @@ ifneq (, $(patch))
 endif
 
 	cd $(srcdir) && \
+		sed -i 's:tiop->c_iflag &= ~(ICRNL | INLCR);:/*&*/:' rltty.c && \
 		sed -i 's: -[LI][^ ]*::g' readline.pc.in history.pc.in
 
 	touch config.cache
