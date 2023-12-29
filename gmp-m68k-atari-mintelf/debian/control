@@ -1,0 +1,20 @@
+Source: gmp-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 4.6.2
+Build-Depends:
+ debhelper-compat (= 12),
+ gcc,
+ m4,
+ gcc-m68k-atari-mintelf,
+Homepage: https://gmplib.org/
+Vcs-Browser: https://gmplib.org/repo/gmp-6.3/
+Vcs-Hg: https://gmplib.org/repo/gmp-6.3/
+Rules-Requires-Root: no
+
+Package: gmp-m68k-atari-mintelf
+Architecture: all
+Description: Multiprecision arithmetic library for Atari MiNT
+ This package is primarily for Atari MiNT developers and is
+ not needed by normal users or developers.

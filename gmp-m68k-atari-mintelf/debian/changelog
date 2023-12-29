@@ -1,0 +1,5 @@
+gmp-m68k-atari-mintelf (6.3.0-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 30 Dec 2023 00:44:02 +0100
