@@ -1,0 +1,5 @@
+mpfr-m68k-atari-mintelf (4.2.1-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 30 Dec 2023 10:28:50 +0100

@@ -1,0 +1,19 @@
+Source: mpfr-m68k-atari-mintelf
+Section: devel
+Priority: optional
+Maintainer: Vincent Riviere <vincent.riviere@freesbee.fr>
+Standards-Version: 4.6.2
+Build-Depends:
+ debhelper-compat (= 12),
+ gcc-m68k-atari-mintelf,
+ gmp-m68k-atari-mintelf,
+Homepage: https://www.mpfr.org/
+Vcs-Browser: https://gitlab.inria.fr/mpfr/mpfr
+Vcs-Git: https://gitlab.inria.fr/mpfr/mpfr.git
+Rules-Requires-Root: no
+
+Package: mpfr-m68k-atari-mintelf
+Architecture: all
+Description: multiple precision floating-point computation developers tools
+ This package is primarily for Atari MiNT developers and is
+ not needed by normal users or developers.
