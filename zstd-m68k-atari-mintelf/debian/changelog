@@ -1,0 +1,5 @@
+zstd-m68k-atari-mintelf (1.5.5-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 30 Dec 2023 15:40:40 +0100

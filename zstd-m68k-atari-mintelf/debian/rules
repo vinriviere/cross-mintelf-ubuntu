@@ -1,0 +1,199 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+package := zstd
+tarball := $(wildcard $(package)-*.tar.*)
+patch   := $(wildcard $(package)-*.patch.xz)
+target  := m68k-atari-mintelf
+prefix  := /usr/$(target)
+
+srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\..*//')
+
+# FIXME: one-char vars are evil, even more than emacs.
+D := $(CURDIR)/debian/$(package)-$(target)
+
+COMMON_CFLAGS := -O3
+
+.PHONY: unpack
+unpack: unpack-stamp
+unpack-stamp:
+	dh_testdir
+
+	tar xf $(tarball)
+
+	touch $@
+
+.PHONY: patch
+patch: patch-stamp
+patch-stamp: unpack-stamp
+	dh_testdir
+
+ifneq (, $(patch))
+	cd $(srcdir) && \
+		xzcat ../$(patch) | patch -p1
+endif
+
+	sed -i 's/\(lib : libzstd.a\) libzstd/\1/' $(srcdir)/lib/Makefile
+	sed -i 's:/\* U64 \*/:&\n#include <stdio.h>:' $(srcdir)/programs/util.h
+	sed -i 's/\(install: install-pc install-static\) install-shared\( install-includes\)/\1\2/' $(srcdir)/lib/Makefile
+
+	touch $@
+
+.PHONY: configure-m68000
+configure-m68000: configure-m68000-stamp
+configure-m68000-stamp: patch-stamp
+	dh_testdir
+
+	cp -r $(srcdir) build-m68000
+
+	touch $@
+
+.PHONY: configure-m68020-60
+configure-m68020-60: configure-m68020-60-stamp
+configure-m68020-60-stamp: patch-stamp
+	dh_testdir
+
+	cp -r $(srcdir) build-m68020-60
+
+	touch $@
+
+.PHONY: configure-m5475
+configure-m5475: configure-m5475-stamp
+configure-m5475-stamp: patch-stamp
+	dh_testdir
+
+	cp -r $(srcdir) build-m5475
+
+	touch $@
+
+.PHONY: build-m68000
+build-m68000: build-m68000-stamp
+build-m68000-stamp: configure-m68000-stamp
+	dh_testdir
+
+	cd build-m68000 && \
+		$(MAKE) CC=$(target)-gcc CFLAGS="$(COMMON_CFLAGS)" lib-release V=1
+
+	touch $@
+
+.PHONY: build-m68020-60
+build-m68020-60: build-m68020-60-stamp
+build-m68020-60-stamp: configure-m68020-60-stamp
+	dh_testdir
+
+	cd build-m68020-60 && \
+		$(MAKE) CC=$(target)-gcc CFLAGS="-m68020-60 $(COMMON_CFLAGS)" lib-release V=1
+
+	touch $@
+
+.PHONY: build-m5475
+build-m5475: build-m5475-stamp
+build-m5475-stamp: configure-m5475-stamp
+	dh_testdir
+
+	cd build-m5475 && \
+		$(MAKE) CC=$(target)-gcc CFLAGS="-mcpu=5475 $(COMMON_CFLAGS)" lib-release V=1
+
+	touch $@
+
+.PHONY: install-m68000
+install-m68000: install-m68000-stamp
+install-m68000-stamp: build-m68000-stamp
+	dh_testdir
+	dh_prep
+	dh_installdirs
+
+	cd build-m68000 && \
+		$(MAKE) -C lib install prefix=$(prefix) DESTDIR=$(D) V=1
+
+	sed -i 's/: -[LI][^ ]*/:/' $(D)$(prefix)/lib/pkgconfig/*.pc
+	sed -i 's/ -pthread//' $(D)$(prefix)/lib/pkgconfig/*.pc
+
+	touch $@
+
+.PHONY: install-m68020-60
+install-m68020-60: install-m68020-60-stamp
+install-m68020-60-stamp: install-m68000-stamp build-m68020-60-stamp
+	dh_testdir
+
+	cd build-m68020-60 && \
+		$(MAKE) -C lib install prefix=$(prefix) DESTDIR=$$PWD/binary-package V=1
+
+	mkdir -p $(D)$(prefix)/lib/m68020-60
+	mv build-m68020-60/binary-package$(prefix)/lib/*.a $(D)$(prefix)/lib/m68020-60/
+
+	touch $@
+
+.PHONY: install-m5475
+install-m5475: install-m5475-stamp
+install-m5475-stamp: install-m68000-stamp build-m5475-stamp
+	dh_testdir
+
+	cd build-m5475 && \
+		$(MAKE) -C lib install prefix=$(prefix) DESTDIR=$$PWD/binary-package V=1
+
+	mkdir -p $(D)$(prefix)/lib/m5475
+	mv build-m5475/binary-package$(prefix)/lib/*.a $(D)$(prefix)/lib/m5475/
+
+	touch $@
+
+.PHONY: clean
+clean:
+	dh_testdir
+	rm -f *-stamp
+	rm -rf build-* $(srcdir)
+	dh_clean
+
+.PHONY: build
+build: build-m68000 build-m68020-60 build-m5475
+
+.PHONY: install
+install: install-stamp
+install-stamp: install-m68000-stamp install-m68020-60-stamp install-m5475-stamp
+	dh_testdir
+
+	# Cleanup
+	find  $(D)/usr/$(target)/lib -name '*.a' -print -exec $(target)-strip -S -x '{}' ';'
+
+	touch $@
+
+# Build architecture-independent files here.
+.PHONY: binary-indep
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+.PHONY: binary-arch
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+#	dh_installexamples
+#	dh_installmenu
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+	dh_installman
+#	dh_installinfo
+	dh_installchangelogs
+	dh_link
+#	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_makeshlibs
+	dh_installdeb
+#	dh_perl
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+.PHONY: binary
+binary: binary-indep binary-arch
