@@ -73,10 +73,10 @@ configure-m68020-60-stamp: patch-stamp
 			--with-terminfo-dirs=/usr/share/terminfo \
 			--with-default-terminfo-dir=/usr/share/terminfo \
 			--without-debug \
-                        CPPFLAGS="" \
+			CPPFLAGS="" \
 			CFLAGS="-m68020-60 $(COMMON_CFLAGS)" \
 			CXXFLAGS="-m68020-60 $(COMMON_CFLAGS)" \
-                        LDFLAGS=""
+			LDFLAGS=""
 
 	touch configure-m68020-60-stamp
 
@@ -93,10 +93,10 @@ configure-m5475-stamp: patch-stamp
 			--with-terminfo-dirs=/usr/share/terminfo \
 			--with-default-terminfo-dir=/usr/share/terminfo \
 			--without-debug \
-                        CPPFLAGS="" \
+			CPPFLAGS="" \
 			CFLAGS="-mcpu=5475 $(COMMON_CFLAGS)" \
 			CXXFLAGS="-mcpu=5475 $(COMMON_CFLAGS)" \
-                        LDFLAGS=""
+			LDFLAGS=""
 
 	touch configure-m5475-stamp
 
