@@ -50,6 +50,7 @@ configure-m68000-stamp: patch-stamp
 			--build=$(DEB_BUILD_GNU_TYPE) \
 			--host=$(target) \
 			--enable-overwrite \
+			--enable-pc-files \
 			--with-terminfo-dirs=/usr/share/terminfo \
 			--with-default-terminfo-dir=/usr/share/terminfo \
 			--without-debug \
@@ -70,6 +71,7 @@ configure-m68020-60-stamp: patch-stamp
 			--build=$(DEB_BUILD_GNU_TYPE) \
 			--host=$(target) \
 			--enable-overwrite \
+			--enable-pc-files \
 			--with-terminfo-dirs=/usr/share/terminfo \
 			--with-default-terminfo-dir=/usr/share/terminfo \
 			--without-debug \
@@ -90,6 +92,7 @@ configure-m5475-stamp: patch-stamp
 			--build=$(DEB_BUILD_GNU_TYPE) \
 			--host=$(target) \
 			--enable-overwrite \
+			--enable-pc-files \
 			--with-terminfo-dirs=/usr/share/terminfo \
 			--with-default-terminfo-dir=/usr/share/terminfo \
 			--without-debug \

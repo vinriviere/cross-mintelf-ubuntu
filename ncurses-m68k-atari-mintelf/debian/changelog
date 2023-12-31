@@ -1,3 +1,9 @@
+ncurses-m68k-atari-mintelf (6.4-20230910-3) unstable; urgency=medium
+
+  * Add pkg-config files.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 31 Dec 2023 15:19:22 +0100
+
 ncurses-m68k-atari-mintelf (6.4-20230910-2) unstable; urgency=medium
 
   * Drop the leading underscore for external symbols.
