@@ -137,6 +137,9 @@ install-m68000-stamp:
 	cd build-m68000 && \
 		$(MAKE) install.libs DESTDIR=$(D)
 
+	mkdir -p $(D)/usr/bin
+	ln -s ../$(target)/bin/ncurses6-config $(D)/usr/bin/$(target)-ncurses6-config
+
 	touch install-m68000-stamp
 
 install-m68020-60: install-m68000 build-m68020-60 install-m68020-60-stamp
