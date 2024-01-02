@@ -38,6 +38,9 @@ ifneq (, $(patch))
 		bzcat ../$(patch) | patch -p1
 endif
 
+	sed -i 's:cf_pathlist="/usr/lib /lib":cf_pathlist="$$prefix/lib":' $(srcdir)/configure
+	sed -i 's:/usr/include:$$prefix/include:' $(srcdir)/misc/ncurses-config.in
+
 	touch patch-stamp
 
 configure-m68000: configure-m68000-stamp

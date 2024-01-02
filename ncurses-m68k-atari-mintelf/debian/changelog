@@ -1,3 +1,9 @@
+ncurses-m68k-atari-mintelf (6.4-20230910-4) unstable; urgency=medium
+
+  * Remove system path from ncurses6-config --libs / --cflags.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 11:39:20 +0100
+
 ncurses-m68k-atari-mintelf (6.4-20230910-3) unstable; urgency=medium
 
   * Add pkg-config files.
