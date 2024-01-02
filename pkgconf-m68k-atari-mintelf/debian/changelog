@@ -1,3 +1,9 @@
+pkgconf-m68k-atari-mintelf (2) unstable; urgency=medium
+
+  * Strip GCC's system include/lib paths
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 10:25:48 +0100
+
 pkgconf-m68k-atari-mintelf (1) unstable; urgency=medium
 
   * Initial release.
