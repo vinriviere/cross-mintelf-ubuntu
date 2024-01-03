@@ -127,8 +127,6 @@ install-m68000-stamp: build-m68000-stamp
 	cd build-m68000 && \
 		$(MAKE) install DESTDIR=$(D)
 
-	sed -i 's/: -[LI][^ ]*/:/' $(D)/usr/$(target)/lib/pkgconfig/*.pc
-
 	touch $@
 
 .PHONY: install-m68020-60

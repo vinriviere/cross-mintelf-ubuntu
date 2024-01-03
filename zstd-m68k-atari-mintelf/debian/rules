@@ -110,7 +110,6 @@ install-m68000-stamp: build-m68000-stamp
 	cd build-m68000 && \
 		$(MAKE) -C lib install prefix=$(prefix) DESTDIR=$(D) V=1
 
-	sed -i 's/: -[LI][^ ]*/:/' $(D)$(prefix)/lib/pkgconfig/*.pc
 	sed -i 's/ -pthread//' $(D)$(prefix)/lib/pkgconfig/*.pc
 
 	touch $@

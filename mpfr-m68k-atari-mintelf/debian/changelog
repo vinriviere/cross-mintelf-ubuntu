@@ -1,3 +1,9 @@
+mpfr-m68k-atari-mintelf (4.2.1-2) unstable; urgency=medium
+
+  * Remove pkg-config lib/include fixes.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 18:27:53 +0100
+
 mpfr-m68k-atari-mintelf (4.2.1-1) unstable; urgency=medium
 
   * Initial release.

@@ -1,3 +1,9 @@
+zstd-m68k-atari-mintelf (1.5.5-2) unstable; urgency=medium
+
+  * Remove pkg-config lib/include fixes.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 18:29:10 +0100
+
 zstd-m68k-atari-mintelf (1.5.5-1) unstable; urgency=medium
 
   * Initial release.

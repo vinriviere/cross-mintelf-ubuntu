@@ -6,7 +6,8 @@ Standards-Version: 3.7.3
 Build-Depends: debhelper (>= 10),
  gzip, bzip2, mawk | awk, texinfo,
  gcc-m68k-atari-mintelf,
- ncurses-m68k-atari-mintelf
+ ncurses-m68k-atari-mintelf,
+ pkgconf-m68k-atari-mintelf (>= 2),
 Homepage: http://www.gnu.org/software/readline/
 
 Package: readline-m68k-atari-mintelf

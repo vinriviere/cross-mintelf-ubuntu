@@ -1,3 +1,9 @@
+gmp-m68k-atari-mintelf (6.3.0-2) unstable; urgency=medium
+
+  * Remove pkg-config lib/include fixes.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 18:27:19 +0100
+
 gmp-m68k-atari-mintelf (6.3.0-1) unstable; urgency=medium
 
   * Initial release.

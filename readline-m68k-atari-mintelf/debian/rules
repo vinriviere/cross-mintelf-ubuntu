@@ -38,8 +38,7 @@ ifneq (, $(patch))
 endif
 
 	cd $(srcdir) && \
-		sed -i 's:tiop->c_iflag &= ~(ICRNL | INLCR);:/*&*/:' rltty.c && \
-		sed -i 's: -[LI][^ ]*::g' readline.pc.in history.pc.in
+		sed -i 's:tiop->c_iflag &= ~(ICRNL | INLCR);:/*&*/:' rltty.c
 
 	touch config.cache
 	echo 'ac_cv_func_chown_works=yes' >>config.cache

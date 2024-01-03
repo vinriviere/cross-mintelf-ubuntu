@@ -70,7 +70,6 @@ configure-m68000-stamp:
 	dh_testdir
 
 	cd build-m68000 && \
-		sed -i 's: -[LI][^ ]*::g' zlib.pc.in && \
 		CHOST=m68k-atari-mintelf CFLAGS="$(COMMON_CFLAGS)" ./configure --prefix=$(INSTALL_DIR)
 
 	touch configure-m68000-stamp
@@ -80,7 +79,6 @@ configure-m68020-60-stamp:
 	dh_testdir
 
 	cd build-m68020-60 && \
-		sed -i 's: -[LI][^ ]*::g' zlib.pc.in && \
 		CHOST=m68k-atari-mintelf CFLAGS="-m68020-60 $(COMMON_CFLAGS)" ./configure --prefix=$(INSTALL_DIR) --libdir='$${exec_prefix}/lib/m68020-60'
 
 	touch configure-m68020-60-stamp
@@ -90,7 +88,6 @@ configure-m5475-stamp:
 	dh_testdir
 
 	cd build-m5475 && \
-		sed -i 's: -[LI][^ ]*::g' zlib.pc.in && \
 		CHOST=m68k-atari-mintelf CFLAGS="-mcpu=5475 $(COMMON_CFLAGS)" ./configure --prefix=$(INSTALL_DIR) --libdir='$${exec_prefix}/lib/m5475'
 
 	touch configure-m5475-stamp

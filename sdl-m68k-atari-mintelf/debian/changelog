@@ -1,3 +1,9 @@
+sdl-m68k-atari-mintelf (1.2.16-Git-20231221-2) unstable; urgency=medium
+
+  * Remove pkg-config lib/include fixes.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 02 Jan 2024 18:28:17 +0100
+
 sdl-m68k-atari-mintelf (1.2.16-Git-20231221-1) unstable; urgency=medium
 
   * Switch to mintelf.
