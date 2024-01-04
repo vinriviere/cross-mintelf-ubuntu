@@ -15,6 +15,7 @@ jobs:
           SSH_ID: ${{ secrets.SSH_ID }}
         run: .github/install_ssh_id.sh
       # Install additional packages
+      - run: sudo apt-get update
       - run: sudo apt-get install -y devscripts debhelper dput python3-paramiko
       # Main script
       - env:
