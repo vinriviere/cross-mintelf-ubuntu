@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.42-mintelf-20240130-1) unstable; urgency=medium
+
+  * Upgrade to version 2.42.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Tue, 30 Jan 2024 22:55:39 +0100
+
 binutils-m68k-atari-mintelf (2.41-mintelf-20230926-1) unstable; urgency=medium
 
   * Fix m68k_elf32_atariprg_relocate_section for .eh_frame. By Thorsten Otto.
