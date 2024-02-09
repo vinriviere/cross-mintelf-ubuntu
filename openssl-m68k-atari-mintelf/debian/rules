@@ -10,10 +10,10 @@
 DEB_BUILD_GNU_TYPE      := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
 DEB_HOST_GNU_TYPE       := $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 
-tarball := $(wildcard openssl-*.tar.gz)
-patch   := $(wildcard openssl-*.patch.bz2)
+tarball := $(wildcard openssl-*.tar.*)
+patch   := $(wildcard openssl-*.patch.xz)
 
-srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\.gz//')
+srcdir  := $(shell echo $(tarball) | sed -e 's/\.tar\..*//')
 
 # FIXME: one-char vars are evil, even more than emacs.
 D := $(CURDIR)/debian/openssl-m68k-atari-mintelf
@@ -23,7 +23,7 @@ unpack: unpack-stamp
 unpack-stamp:
 	dh_testdir
 
-	tar zxf $(tarball)
+	tar xf $(tarball)
 
 	touch unpack-stamp
 
@@ -34,11 +34,8 @@ patch-stamp: unpack-stamp
 
 ifneq (, $(patch))
 	cd $(srcdir) && \
-		bzcat ../$(patch) | patch -p1
+		xzcat ../$(patch) | patch -p1
 endif
-
-	cd $(srcdir) && \
-		sed -i "s/: -[LI][^ ']*/:/g" Configurations/unix-Makefile.tmpl
 
 	touch patch-stamp
 
