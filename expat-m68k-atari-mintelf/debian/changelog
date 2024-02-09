@@ -1,3 +1,9 @@
+expat-m68k-atari-mintelf (2.6.0-1) unstable; urgency=medium
+
+  * Upgrade to version 2.6.0.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Fri, 09 Feb 2024 23:06:10 +0100
+
 expat-m68k-atari-mintelf (2.5.0-2) unstable; urgency=medium
 
   * Remove pkg-config lib/include fixes.
