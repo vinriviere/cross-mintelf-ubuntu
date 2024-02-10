@@ -1,3 +1,9 @@
+binutils-m68k-atari-mintelf (2.42-mintelf-20240210-1) unstable; urgency=medium
+
+  * ld: Fix assert when _stksize is referenced but not defined.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sat, 10 Feb 2024 15:07:15 +0100
+
 binutils-m68k-atari-mintelf (2.42-mintelf-20240130-1) unstable; urgency=medium
 
   * Upgrade to version 2.42.
