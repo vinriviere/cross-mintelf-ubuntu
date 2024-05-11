@@ -24,22 +24,25 @@ echorun .github/deploy_changed_packages.sh -m68k-atari-mintelf
 # The lines below are sorted according to dependencies
 #echorun .github/deploy_ppa_all_dists.sh binutils-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh mintbin-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh pkgconf-m68k-atari-mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh gcc-m68k-atari-mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh mintlib-m68k-atari-mintelf
-
 #echorun .github/deploy_ppa_all_dists.sh fdlibm-m68k-atari-mintelf
-
 #echorun .github/deploy_ppa_all_dists.sh gemlib-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh ncurses-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh zlib-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh zstd-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh gmp-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh expat-m68k-atari-mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh cross-mintelf-essential
 #echorun .github/deploy_ppa_all_dists.sh cflib-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh gemma-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh ldg-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh readline-m68k-atari-mintelf
+#echorun .github/deploy_ppa_all_dists.sh mpfr-m68k-atari-mintelf
 
 #echorun .github/deploy_ppa_all_dists.sh sdl-m68k-atari-mintelf
 #echorun .github/deploy_ppa_all_dists.sh openssl-m68k-atari-mintelf
