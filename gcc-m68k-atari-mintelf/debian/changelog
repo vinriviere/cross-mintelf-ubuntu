@@ -1,3 +1,9 @@
+gcc-m68k-atari-mintelf (13.3.0-mintelf-20240529-1) unstable; urgency=medium
+
+  * Upgrade to version 13.3.0.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Wed, 29 May 2024 21:45:53 +0200
+
 gcc-m68k-atari-mintelf (13.2.0-mintelf-20240130-1) unstable; urgency=medium
 
   * Upgrade to current mintelf patch. Minor changes.
