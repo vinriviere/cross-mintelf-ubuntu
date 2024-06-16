@@ -1,3 +1,9 @@
+pkgconf-m68k-atari-mintelf (3) unstable; urgency=medium
+
+  * Revert to Debian package source format 1.0.
+
+ -- Vincent Riviere <vincent.riviere@freesbee.fr>  Sun, 16 Jun 2024 13:00:33 +0200
+
 pkgconf-m68k-atari-mintelf (2) unstable; urgency=medium
 
   * Strip GCC's system include/lib paths
